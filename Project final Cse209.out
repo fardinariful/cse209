@@ -1,0 +1,207 @@
+
+**** 09/09/21 11:01:54 *********** Evaluation PSpice (Nov 1999) **************
+
+ * G:\STUDY\CSE209\Project final Cse209.sch
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+* Schematics Version 9.1 - Web Update 1
+* Thu Sep 09 11:01:15 2021
+
+
+.PARAM         RVAR=10 
+
+** Analysis setup **
+.DC LIN PARAM RVAR 0.001 3.5 0.001 
+.OP 
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "Project final Cse209.net"
+
+**** INCLUDING "Project final Cse209.net" ****
+* Schematics Netlist *
+
+
+
+I_I2         0 C DC 1A  
+R_R1         0 C  4  
+R_R2         0 $N_0001  1  
+R_R4         $N_0002 A  2  
+R_R3         0 B  4  
+H_H1         $N_0001 C VH_H1 4
+VH_H1        A B 0V
+R_R5         A C  1  
+G_G1         A $N_0001 C A 2
+R_R6         0 I  4  
+R_R7         0 $N_0003  1  
+R_R8         $N_0004 E  2  
+R_R9         0 F  4  
+H_H2         $N_0003 I VH_H2 4
+VH_H2        E F 0V
+G_G2         E $N_0003 I E 2
+I_I6         0 M DC 1A  
+R_R11         0 M  4  
+R_R12         0 $N_0005  1  
+R_R13         $N_0006 K  2  
+R_R14         0 L  4  
+H_H3         $N_0005 M VH_H3 4
+VH_H3        K L 0V
+R_R15         K M  1  
+G_G3         K $N_0005 M K 2
+R_R10         E I  1  
+I_I4         0 I DC 1A  
+V_V1         $N_0004 0 0V
+R_R17         $N_0008 $N_0007  1.88  
+V_V2         $N_0008 0 0.457V
+I_I1         $N_0002 0 DC 0A  
+R_RL         0 $N_0007  1.88  
+R_R16         0 $N_0006  {RVAR}  
+
+**** RESUMING "Project final Cse209.cir" ****
+.INC "Project final Cse209.als"
+
+
+
+**** INCLUDING "Project final Cse209.als" ****
+* Schematics Aliases *
+
+.ALIASES
+I_I2            I2(+=0 -=C )
+R_R1            R1(1=0 2=C )
+R_R2            R2(1=0 2=$N_0001 )
+R_R4            R4(1=$N_0002 2=A )
+R_R3            R3(1=0 2=B )
+H_H1            H1(3=$N_0001 4=C )
+VH_H1           H1(1=A 2=B )
+R_R5            R5(1=A 2=C )
+G_G1            G1(3=A 4=$N_0001 1=C 2=A )
+R_R6            R6(1=0 2=I )
+R_R7            R7(1=0 2=$N_0003 )
+R_R8            R8(1=$N_0004 2=E )
+R_R9            R9(1=0 2=F )
+H_H2            H2(3=$N_0003 4=I )
+VH_H2           H2(1=E 2=F )
+G_G2            G2(3=E 4=$N_0003 1=I 2=E )
+I_I6            I6(+=0 -=M )
+R_R11           R11(1=0 2=M )
+R_R12           R12(1=0 2=$N_0005 )
+R_R13           R13(1=$N_0006 2=K )
+R_R14           R14(1=0 2=L )
+H_H3            H3(3=$N_0005 4=M )
+VH_H3           H3(1=K 2=L )
+R_R15           R15(1=K 2=M )
+G_G3            G3(3=K 4=$N_0005 1=M 2=K )
+R_R10           R10(1=E 2=I )
+I_I4            I4(+=0 -=I )
+V_V1            V1(+=$N_0004 -=0 )
+R_R17           R17(1=$N_0008 2=$N_0007 )
+V_V2            V2(+=$N_0008 -=0 )
+I_I1            I1(+=$N_0002 -=0 )
+R_RL            RL(1=0 2=$N_0007 )
+R_R16           R16(1=0 2=$N_0006 )
+_    _(B=B)
+_    _(C=C)
+_    _(A=A)
+_    _(D=A)
+_    _(F=F)
+_    _(I=I)
+_    _(E=E)
+_    _(J=E)
+_    _(L=L)
+_    _(M=M)
+_    _(K=K)
+_    _(N=K)
+.ENDALIASES
+
+
+**** RESUMING "Project final Cse209.cir" ****
+.probe
+
+
+.END
+
+**** 09/09/21 11:01:54 *********** Evaluation PSpice (Nov 1999) **************
+
+ * G:\STUDY\CSE209\Project final Cse209.sch
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(    A)     .4571  (    B)     .4571  (    C)     .3429  (    E)     .4848      
+
+(    F)     .4848  (    I)     .1212  (    K)     .4615  (    L)     .4615      
+
+(    M)     .3077  ($N_0001)     .8000                   ($N_0002)     .4571    
+
+($N_0003)     .6061                   ($N_0004)    0.0000                       
+
+($N_0005)     .7692                   ($N_0006)     .3846                       
+
+($N_0007)     .2285                   ($N_0008)     .4570                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    VH_H1        1.143E-01
+    VH_H2        1.212E-01
+    VH_H3        1.154E-01
+    V_V1         2.424E-01
+    V_V2        -1.215E-01
+
+    TOTAL POWER DISSIPATION   5.55E-02  WATTS
+
+
+**** 09/09/21 11:01:54 *********** Evaluation PSpice (Nov 1999) **************
+
+ * G:\STUDY\CSE209\Project final Cse209.sch
+
+
+ ****     OPERATING POINT INFORMATION      TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+
+
+
+**** VOLTAGE-CONTROLLED CURRENT SOURCES
+
+
+NAME         G_G1        G_G2        G_G3      
+I-SOURCE    -2.286E-01  -7.273E-01  -3.077E-01
+
+
+**** CURRENT-CONTROLLED VOLTAGE SOURCES
+
+
+NAME         H_H1        H_H2        H_H3      
+V-SOURCE     4.571E-01   4.848E-01   4.615E-01
+I-SOURCE    -1.029E+00  -1.333E+00  -1.077E+00
+
+          JOB CONCLUDED
+
+          TOTAL JOB TIME             .11
+

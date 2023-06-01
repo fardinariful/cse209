@@ -1,0 +1,37 @@
+* Schematics Netlist *
+
+
+
+I_I2         0 C DC 1A  
+R_R1         0 C  4  
+R_R2         0 $N_0001  1  
+R_R4         $N_0002 A  2  
+R_R3         0 B  4  
+H_H1         $N_0001 C VH_H1 4
+VH_H1        A B 0V
+R_R5         A C  1  
+G_G1         A $N_0001 C A 2
+R_R6         0 I  4  
+R_R7         0 $N_0003  1  
+R_R8         $N_0004 E  2  
+R_R9         0 F  4  
+H_H2         $N_0003 I VH_H2 4
+VH_H2        E F 0V
+G_G2         E $N_0003 I E 2
+I_I6         0 M DC 1A  
+R_R11         0 M  4  
+R_R12         0 $N_0005  1  
+R_R13         $N_0006 K  2  
+R_R14         0 L  4  
+H_H3         $N_0005 M VH_H3 4
+VH_H3        K L 0V
+R_R15         K M  1  
+G_G3         K $N_0005 M K 2
+R_R10         E I  1  
+I_I4         0 I DC 1A  
+V_V1         $N_0004 0 0V
+R_R17         $N_0008 $N_0007  1.88  
+V_V2         $N_0008 0 0.457V
+I_I1         $N_0002 0 DC 0A  
+R_RL         0 $N_0007  1.88  
+R_R16         0 $N_0006  {RVAR}  
